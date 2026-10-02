@@ -1,0 +1,28 @@
+:host { display: block; }
+.hero-side-note { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 0 0.6rem; border-top: 1px solid #b9cec2; color: var(--ink-soft); }
+.hero-side-note span { color: var(--coral); font-size: 0.8rem; font-weight: 700; }
+.hero-side-note p { max-width: 190px; margin: 0; font-size: 0.82rem; line-height: 1.45; }
+.detail-intro { display: grid; grid-template-columns: 0.6fr 1fr; align-items: start; gap: 3rem; }
+.detail-intro h2 { max-width: 390px; margin: 0; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1; }
+.detail-intro .prose { margin: 0; }
+.sign-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem 2rem; max-width: 900px; margin: 0; padding: 0; list-style: none; }
+.sign-list li { display: flex; align-items: baseline; gap: 0.7rem; padding: 0.85rem 0; border-bottom: 1px solid var(--line); color: #33463e; line-height: 1.5; }
+.sign-list li span { color: var(--green); font-weight: 700; }
+.factor-item { min-height: 110px; padding: 1rem; border-top: 2px solid #d4b451; background: white; }
+.factor-item span { color: var(--coral); font-size: 0.72rem; font-weight: 700; }
+.factor-item h3 { margin: 0.8rem 0 0; font-size: 0.97rem; }
+.detail-support { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.detail-support .section-heading { margin-bottom: 0; }
+.detail-support .section-heading h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.detail-steps { display: grid; gap: 0.8rem; margin: 0; padding-left: 1.3rem; color: #33463e; line-height: 1.6; }
+.handoff-note { margin: 0.65rem 0 0; color: var(--ink-soft); font-size: 0.76rem; }
+.disclaimer-note { margin: 1rem 0 0; color: var(--muted); font-size: 0.77rem; }
+.notice-block { max-width: 820px; padding: 1.4rem 1.5rem; border-left: 4px solid var(--coral); background: var(--coral-pale); }
+.notice-block .eyebrow { margin-bottom: 0.55rem; }
+.notice-block h2 { margin-bottom: 0.55rem; font-size: 1.4rem; }
+.notice-block > p:last-child { margin-bottom: 0; color: #544a45; line-height: 1.7; }
+.prose-section { max-width: 760px; }
+.prose-section h2 { margin-bottom: 0.8rem; font-size: 1.65rem; }
+.prose-section > p:last-child { margin-bottom: 0; color: var(--ink-soft); line-height: 1.8; }
+.crisis-card { max-width: 560px; }
+@media (max-width: 700px) { .detail-intro, .detail-support { grid-template-columns: 1fr; gap: 1.5rem; } .sign-list { grid-template-columns: 1fr; gap: 0; } }

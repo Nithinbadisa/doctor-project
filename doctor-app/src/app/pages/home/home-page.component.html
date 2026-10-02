@@ -1,0 +1,39 @@
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Mental wellbeing, connected care</p>
+      <h1>A clearer way forward for your mental wellbeing.</h1>
+      <p class="hero__lead">Understand what you are feeling, explore clinician-guided support, and take the next step securely through HealthPlix.</p>
+      <div class="hero__actions"><a class="button" routerLink="/services">Find the right care <span aria-hidden="true">→</span></a><a class="text-link" routerLink="/assessments">Explore self-checks</a></div>
+      <div class="hero__trust" aria-label="MindCare principles"><span><b>01</b> Clinician-led</span><span><b>02</b> Private by design</span><span><b>03</b> Clear next steps</span></div>
+    </div>
+    <figure class="hero__image-wrap">
+      <img class="hero__image" src="https://mindcare-healthplix.karthikbirru1.chatgpt.site/wellbeing-reflection.png" alt="A person taking a quiet moment to write by a window" width="720" height="860" fetchpriority="high">
+      <figcaption><span class="hero__image-index">A small beginning</span><span>Start where you are.</span></figcaption>
+      <div class="hero__image-note"><span aria-hidden="true">↗</span><span>Private browsing<br>from the first step</span></div>
+    </figure>
+  </div>
+</section>
+<section class="promise-band" aria-label="MindCare principles"><div class="container promise-band__inner"><p><span>01</span> Clinician-led information</p><p><span>02</span> No public intake forms</p><p><span>03</span> Secure HealthPlix handoff</p></div></section>
+<section class="content-band service-section"><div class="container">
+  <div class="section-heading service-section__heading"><div><p class="eyebrow">Care for what life is asking of you</p><h2>You do not need the perfect words to begin.</h2></div><a class="text-link" routerLink="/services">View all services <span aria-hidden="true">→</span></a></div>
+  <div class="card-grid">@for (service of services; track service.slug) {<article class="service-card"><span class="service-card__index">0{{ $index + 1 }}</span><h3>{{ service.title }}</h3><p class="service-card__tagline">{{ service.tagline }}</p><a class="text-link" [routerLink]="['/services', service.slug]">Explore this support <span aria-hidden="true">→</span></a></article>}</div>
+</div></section>
+<section class="start-section"><div class="container start-section__inner">
+  <div class="start-section__image" role="img" aria-label="A calm space for reflection"></div>
+  <div class="start-section__copy"><p class="eyebrow">Start where you are</p><h2>Your first step can be a small one.</h2><p>Mental wellbeing rarely fits into one neat label. Begin with the concern that feels closest, and use our service guides to understand what thoughtful support can look like.</p>
+    <ol class="mini-steps"><li><span>01</span> Explore without creating an account</li><li><span>02</span> Choose a path without assuming a diagnosis</li><li><span>03</span> Continue privately when you feel ready</li></ol>
+    <a class="text-link" routerLink="/how-it-works">See how care works <span aria-hidden="true">→</span></a>
+  </div>
+</div></section>
+<section class="content-band journey-section"><div class="container">
+  <div class="section-heading"><p class="eyebrow">How it works</p><h2>A simple journey from understanding to care.</h2><p>MindCare keeps public guidance separate from the secure systems that manage patient information.</p></div>
+  <ol class="journey-list">@for (step of careSteps.slice(0, 4); track step.title) {<li><span class="journey-list__number">0{{ $index + 1 }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>}</ol>
+  <a class="text-link" routerLink="/how-it-works">Read the full care journey <span aria-hidden="true">→</span></a>
+</div></section>
+<section class="assessment-band"><div class="container assessment-band__inner"><div><p class="eyebrow">Preliminary self-checks</p><h2>A private starting point, with your information kept in the right place.</h2><p>See what each self-check covers before leaving MindCare. Questions, answers, scores, and results never pass through this public website.</p></div><div class="assessment-band__actions"><a class="button button--light" routerLink="/assessments">Browse self-checks <span aria-hidden="true">→</span></a><span>Not a diagnosis. Always optional.</span></div></div></section>
+<section class="content-band faq-section"><div class="container faq-section__inner">
+  <div class="section-heading"><p class="eyebrow">Common questions</p><h2>Know what happens before you continue.</h2><a class="text-link" routerLink="/faq">View all FAQs <span aria-hidden="true">→</span></a></div>
+  <div class="faq-list"><details><summary>Does MindCare store my assessment answers?</summary><p>No. Assessment questions, answers, scores, and results stay in HealthPlix and are not sent back to this public site.</p></details><details><summary>Can I explore services before creating an account?</summary><p>Yes. Browse service and therapy information here without creating a MindCare account.</p></details><details><summary>Are online self-checks a diagnosis?</summary><p>No. A self-check is preliminary information and does not replace evaluation by a qualified clinician.</p></details></div>
+</div></section>
+<section class="urgent-band"><div class="container urgent-band__inner"><div><p class="eyebrow">Immediate support</p><h2>In immediate danger or thinking about self-harm?</h2><p>MindCare is not an emergency service. Use verified crisis and emergency support now.</p></div><a class="button button--light" routerLink="/crisis-support">Get urgent help <span aria-hidden="true">→</span></a></div></section>

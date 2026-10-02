@@ -1,0 +1,45 @@
+:host {
+	display: block;
+}
+
+.emergency-ribbon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.25rem;
+	min-height: 2.5rem;
+	padding: 0.45rem 1rem;
+	background: #f3f0df;
+	color: #283c33;
+	font-size: 0.78rem;
+	line-height: 1.45;
+}
+
+.emergency-ribbon p {
+	margin: 0;
+}
+
+.emergency-ribbon a {
+	color: #173f34;
+	font-weight: 700;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.16em;
+}
+
+.emergency-ribbon > a {
+	flex: 0 0 auto;
+	text-decoration: none;
+}
+
+main {
+	min-height: 55vh;
+}
+
+@media (max-width: 640px) {
+	.emergency-ribbon {
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 0.75rem;
+		font-size: 0.7rem;
+	}
+}

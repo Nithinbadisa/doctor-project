@@ -18,11 +18,11 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render the shared MindCare shell', () => {
+  it('should render the shared Antara shell', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.brand__word')?.textContent).toContain('mindcare');
+    expect(compiled.querySelector('.brand__word')?.textContent).toContain('Antara');
     expect(compiled.querySelector('.emergency-ribbon')?.textContent).toContain('112');
   });
 });

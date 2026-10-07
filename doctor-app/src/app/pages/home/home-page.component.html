@@ -1,39 +1,39 @@
 <section class="hero">
   <div class="container hero__inner">
     <div class="hero__copy">
-      <p class="eyebrow">Mental wellbeing, connected care</p>
-      <h1>A clearer way forward for your mental wellbeing.</h1>
-      <p class="hero__lead">Understand what you are feeling, explore clinician-guided support, and take the next step securely through HealthPlix.</p>
-      <div class="hero__actions"><a class="button" routerLink="/services">Find the right care <span aria-hidden="true">→</span></a><a class="text-link" routerLink="/assessments">Explore self-checks</a></div>
-      <div class="hero__trust" aria-label="MindCare principles"><span><b>01</b> Clinician-led</span><span><b>02</b> Private by design</span><span><b>03</b> Clear next steps</span></div>
+      <p class="eyebrow">ANTARA <span aria-hidden="true">·</span> MENTAL HEALTH CARE</p>
+      <h1>Dr. Kartheek Kutnani</h1>
+      <p class="hero__role">Neuro Psychotherapist</p>
+      <p class="hero__lead">Explore mental health services, understand your options, and find a thoughtful next step with Dr. Kutnani.</p>
+      <div class="hero__actions"><a class="button" href="#services">Explore services <span aria-hidden="true">↓</span></a><a class="text-link" href="#doctor">About Dr. Kutnani</a></div>
+      <nav class="hero__topics" aria-label="Popular support areas"><span>Explore support for</span><a href="#services">Anxiety & stress</a><a href="#services">Low mood</a><a href="#services">Sleep</a><a href="#services">Relationships</a></nav>
+      <div class="hero__trust" aria-label="Antara care principles"><span><b>✓</b> Browse without an account</span><span><b>✓</b> Care continues securely in HealthPlix</span></div>
     </div>
     <figure class="hero__image-wrap">
-      <img class="hero__image" src="https://mindcare-healthplix.karthikbirru1.chatgpt.site/wellbeing-reflection.png" alt="A person taking a quiet moment to write by a window" width="720" height="860" fetchpriority="high">
-      <figcaption><span class="hero__image-index">A small beginning</span><span>Start where you are.</span></figcaption>
-      <div class="hero__image-note"><span aria-hidden="true">↗</span><span>Private browsing<br>from the first step</span></div>
+      <img class="hero__image" src="https://mindcare-healthplix.karthikbirru1.chatgpt.site/wellbeing-reflection.png" alt="A person taking a quiet moment to write by a window; illustrative, not a clinician portrait" width="720" height="860" fetchpriority="high">
+      <figcaption><span class="hero__image-index">A small beginning</span><span>At your own pace.</span></figcaption>
+      <div class="hero__image-note">A first conversation<br>starts with you.</div>
     </figure>
   </div>
 </section>
-<section class="promise-band" aria-label="MindCare principles"><div class="container promise-band__inner"><p><span>01</span> Clinician-led information</p><p><span>02</span> No public intake forms</p><p><span>03</span> Secure HealthPlix handoff</p></div></section>
-<section class="content-band service-section"><div class="container">
-  <div class="section-heading service-section__heading"><div><p class="eyebrow">Care for what life is asking of you</p><h2>You do not need the perfect words to begin.</h2></div><a class="text-link" routerLink="/services">View all services <span aria-hidden="true">→</span></a></div>
-  <div class="card-grid">@for (service of services; track service.slug) {<article class="service-card"><span class="service-card__index">0{{ $index + 1 }}</span><h3>{{ service.title }}</h3><p class="service-card__tagline">{{ service.tagline }}</p><a class="text-link" [routerLink]="['/services', service.slug]">Explore this support <span aria-hidden="true">→</span></a></article>}</div>
+<section class="doctor-section" id="doctor" aria-labelledby="doctor-heading"><div class="container doctor-section__inner">
+  <div class="doctor-section__intro"><p class="eyebrow">Meet your doctor</p><h2 id="doctor-heading">Dr. Kartheek Kutnani</h2><p class="doctor-section__role">Neuro Psychotherapist</p><p>Start with what has been difficult lately. You don’t need a diagnosis or the perfect words; explore the services below and discuss suitable next steps with Dr. Kutnani.</p><a class="text-link" routerLink="/about">Learn about the care approach <span aria-hidden="true">→</span></a></div>
+  <div class="doctor-principles" aria-label="What to expect from care"><div><span>01</span><h3>Start with your story</h3><p>Talk about what matters to you, in your own words.</p></div><div><span>02</span><h3>Understand your options</h3><p>Explore suitable next steps together with a clinician.</p></div><div><span>03</span><h3>Move at your pace</h3><p>Choose what feels manageable for you right now.</p></div></div>
 </div></section>
-<section class="start-section"><div class="container start-section__inner">
-  <div class="start-section__image" role="img" aria-label="A calm space for reflection"></div>
-  <div class="start-section__copy"><p class="eyebrow">Start where you are</p><h2>Your first step can be a small one.</h2><p>Mental wellbeing rarely fits into one neat label. Begin with the concern that feels closest, and use our service guides to understand what thoughtful support can look like.</p>
-    <ol class="mini-steps"><li><span>01</span> Explore without creating an account</li><li><span>02</span> Choose a path without assuming a diagnosis</li><li><span>03</span> Continue privately when you feel ready</li></ol>
-    <a class="text-link" routerLink="/how-it-works">See how care works <span aria-hidden="true">→</span></a>
-  </div>
+<section class="content-band service-section" id="services" aria-labelledby="services-heading"><div class="container">
+  <div class="section-heading service-section__heading"><div><p class="eyebrow">Care for what life is asking of you</p><h2 id="services-heading">Explore support that fits.</h2><p>Choose the topic closest to what you’re experiencing. It’s okay if you’re not sure yet.</p></div><a class="text-link" routerLink="/services">All services <span aria-hidden="true">→</span></a></div>
+  <div class="service-filters" role="group" aria-label="Filter services by topic">@for (filter of serviceFilters; track filter.id) {<button type="button" [class.is-selected]="selectedFilter === filter.id" [attr.aria-pressed]="selectedFilter === filter.id" (click)="setFilter(filter.id)">{{ filter.label }}</button>}</div>
+  <p class="service-count" aria-live="polite">{{ filteredServices.length }} support options</p>
+  <div class="card-grid">@for (service of filteredServices; track service.slug; let i = $index) {<article class="service-card"><span class="service-card__index">0{{ $index + 1 }}</span><h3>{{ service.title }}</h3><p class="service-card__tagline">{{ service.tagline }}</p><a class="text-link" [routerLink]="['/services', service.slug]">Explore this support <span aria-hidden="true">→</span></a></article>}</div>
 </div></section>
 <section class="content-band journey-section"><div class="container">
-  <div class="section-heading"><p class="eyebrow">How it works</p><h2>A simple journey from understanding to care.</h2><p>MindCare keeps public guidance separate from the secure systems that manage patient information.</p></div>
-  <ol class="journey-list">@for (step of careSteps.slice(0, 4); track step.title) {<li><span class="journey-list__number">0{{ $index + 1 }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>}</ol>
+  <div class="section-heading"><p class="eyebrow">How it works</p><h2>A simple journey from understanding to care.</h2><p>Antara keeps public guidance separate from the secure systems that manage patient information.</p></div>
+  <ol class="journey-list">@for (step of careSteps.slice(0, 4); track step.title; let i = $index) {<li class="numbered-item"><span class="numbered-item__number">0{{ i + 1 }}</span><div><h3>{{ step.title }}</h3><p>{{ step.body }}</p></div></li>}</ol>
   <a class="text-link" routerLink="/how-it-works">Read the full care journey <span aria-hidden="true">→</span></a>
 </div></section>
-<section class="assessment-band"><div class="container assessment-band__inner"><div><p class="eyebrow">Preliminary self-checks</p><h2>A private starting point, with your information kept in the right place.</h2><p>See what each self-check covers before leaving MindCare. Questions, answers, scores, and results never pass through this public website.</p></div><div class="assessment-band__actions"><a class="button button--light" routerLink="/assessments">Browse self-checks <span aria-hidden="true">→</span></a><span>Not a diagnosis. Always optional.</span></div></div></section>
+<section class="assessment-band"><div class="container assessment-band__inner"><div><p class="eyebrow">Optional reflection check-ins</p><h2>A private starting point, with your information kept in the right place.</h2><p>Try a short reflection here without an account. Answers and totals are not saved or sent; formal clinical assessments and care continue securely through HealthPlix.</p></div><div class="assessment-band__actions"><a class="button button--light" routerLink="/assessments">Browse check-ins <span aria-hidden="true">→</span></a><span>Not a diagnosis. Always optional.</span></div></div></section>
 <section class="content-band faq-section"><div class="container faq-section__inner">
   <div class="section-heading"><p class="eyebrow">Common questions</p><h2>Know what happens before you continue.</h2><a class="text-link" routerLink="/faq">View all FAQs <span aria-hidden="true">→</span></a></div>
-  <div class="faq-list"><details><summary>Does MindCare store my assessment answers?</summary><p>No. Assessment questions, answers, scores, and results stay in HealthPlix and are not sent back to this public site.</p></details><details><summary>Can I explore services before creating an account?</summary><p>Yes. Browse service and therapy information here without creating a MindCare account.</p></details><details><summary>Are online self-checks a diagnosis?</summary><p>No. A self-check is preliminary information and does not replace evaluation by a qualified clinician.</p></details></div>
+  <div class="faq-list"><details><summary>Does Antara store my check-in answers?</summary><p>No. Your selections and total stay only in the current page session and are not saved or sent. Formal clinical assessments are handled in HealthPlix.</p></details><details><summary>Can I explore services before creating an account?</summary><p>Yes. Browse service and therapy information here without creating an Antara account.</p></details><details><summary>Are online self-checks a diagnosis?</summary><p>No. Antara check-ins are not validated screening tools and do not replace evaluation by a qualified clinician.</p></details></div>
 </div></section>
-<section class="urgent-band"><div class="container urgent-band__inner"><div><p class="eyebrow">Immediate support</p><h2>In immediate danger or thinking about self-harm?</h2><p>MindCare is not an emergency service. Use verified crisis and emergency support now.</p></div><a class="button button--light" routerLink="/crisis-support">Get urgent help <span aria-hidden="true">→</span></a></div></section>
+<section class="urgent-band"><div class="container urgent-band__inner"><div><p class="eyebrow">Immediate support</p><h2>In immediate danger or thinking about self-harm?</h2><p>Antara is not an emergency service. Use verified crisis and emergency support now.</p></div><a class="button button--light" routerLink="/crisis-support">Get urgent help <span aria-hidden="true">→</span></a></div></section>

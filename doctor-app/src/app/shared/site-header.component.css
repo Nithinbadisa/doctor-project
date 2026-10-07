@@ -2,7 +2,7 @@
 .site-header { position: relative; z-index: 5; border-bottom: 1px solid var(--line); background: var(--paper); }
 .site-header__inner { display: flex; width: min(var(--content), calc(100% - 3rem)); min-height: 76px; align-items: center; justify-content: space-between; gap: 2rem; margin: 0 auto; }
 .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--ink); text-decoration: none; }
-.brand__mark { display: grid; width: 31px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: var(--green); color: white; font-family: 'Fraunces', Georgia, serif; font-size: 1.45rem; font-weight: 600; }
+.brand__mark { display: block; width: 40px; aspect-ratio: 1; border: 1px solid #d2a943; border-radius: 4px; object-fit: cover; }
 .brand__word { font-size: 1.25rem; font-weight: 700; }
 .brand__word span { color: var(--coral); }
 .primary-nav { display: flex; align-items: center; gap: clamp(0.8rem, 2vw, 1.6rem); }

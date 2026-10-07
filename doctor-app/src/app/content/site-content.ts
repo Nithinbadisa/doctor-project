@@ -112,16 +112,18 @@ export const services: ServiceInfo[] = [
 ];
 
 export const assessments = [
-  { title: 'Anxiety Self-Check', category: 'Anxiety', time: 'About 3 minutes', body: 'A preliminary check-in for persistent worry, nervousness, tension, or panic-like experiences.' },
-  { title: 'Low Mood Self-Check', category: 'Mood', time: 'About 4 minutes', body: 'A preliminary check-in for low mood, reduced interest, energy changes, and hopelessness.' },
-  { title: 'Sleep Difficulty Self-Check', category: 'Sleep', time: 'About 4 minutes', body: 'A preliminary check-in for difficulty falling asleep, staying asleep, or feeling restored.' },
-  { title: 'Stress and Burnout Self-Check', category: 'Stress', time: 'About 4 minutes', body: 'A preliminary check-in for overload, exhaustion, irritability, and difficulty coping.' }
+  { slug: 'anxiety', title: 'Anxiety & Stress Check-in', category: 'Anxiety', time: 'About 2 minutes', body: 'Reflect on worry, tension, and how these experiences affect everyday life.' },
+  { slug: 'depression', title: 'Low Mood Check-in', category: 'Mood', time: 'About 2 minutes', body: 'Reflect on mood, interest, energy, and everyday activities.' },
+  { slug: 'sleep', title: 'Sleep Check-in', category: 'Sleep', time: 'About 2 minutes', body: 'Reflect on sleep patterns, rest, and daytime effects.' },
+  { slug: 'stress', title: 'Stress & Burnout Check-in', category: 'Stress', time: 'About 2 minutes', body: 'Reflect on demands, energy, and opportunities to recover.' },
+  { slug: 'relationships', title: 'Relationship Check-in', category: 'Relationships', time: 'About 2 minutes', body: 'Reflect on communication, connection, and relationship patterns.' },
+  { slug: 'general', title: 'General Wellbeing Check-in', category: 'General', time: 'About 2 minutes', body: 'Reflect on changes in wellbeing and possible next steps.' }
 ];
 
 export const careSteps = [
-  { title: 'Explore MindCare', body: 'Read about services, therapies, and self-checks without creating a public-site account.' },
-  { title: 'Choose a next step', body: 'Review patient login, a self-check, or appointment options and see where each action leads.' },
-  { title: 'Continue to HealthPlix', body: 'HealthPlix manages identity, consent, questions, answers, payments, prescriptions, and records.' },
+  { title: 'Explore Antara', body: 'Read about services, therapies, and self-checks without creating a public-site account.' },
+  { title: 'Choose a next step', body: 'Try an optional reflection check-in, or review patient login, formal assessment, and appointment options.' },
+  { title: 'Continue to HealthPlix', body: 'HealthPlix manages patient identity, consent, formal assessments, appointments, payments, prescriptions, and records.' },
   { title: 'Meet the care team', body: 'Your clinician reviews the appropriate information and discusses an individual plan.' },
   { title: 'Continue follow-up', body: 'Appointments and care records remain connected through the established patient application.' }
 ];
@@ -149,11 +151,11 @@ const contentPages: Record<string, ContentPage> = {
   assessments: {
     eyebrow: 'Preliminary self-checks',
     title: 'Understand the option before you begin',
-    lead: 'MindCare explains what each self-check covers. HealthPlix handles consent, questions, answers, scoring, results, and clinical follow-up.',
+    lead: 'These optional reflection check-ins help you organize your thoughts. They are not validated clinical assessments and do not diagnose a condition.',
     sections: [
-      { kind: 'notice', heading: 'A self-check is not a diagnosis', body: 'These tools do not replace professional evaluation. You can explore this page without sharing personal information.' },
-      { kind: 'cards', heading: 'Choose a topic to explore', items: assessments.map((item) => ({ title: item.title, body: `${item.body} ${item.time}.`, href: '/how-it-works' })) },
-      { kind: 'prose', heading: 'Your information stays in the care system', body: 'MindCare does not receive assessment questions, selected answers, scores, severity labels, or result history from HealthPlix.' }
+      { kind: 'notice', heading: 'A check-in is not a diagnosis', body: 'These reflection questions are not clinically validated screening tools and do not replace an evaluation by a qualified professional. Answers stay in your current page session and are not saved or sent from this website.' },
+      { kind: 'cards', heading: 'Choose a topic to explore', items: assessments.map((item) => ({ title: item.title, body: `${item.body} ${item.time}.`, href: `/assessments/${item.slug}` })) },
+      { kind: 'prose', heading: 'Want to discuss your check-in?', body: 'You can use the total as a starting point when speaking with Dr. Kartheek. It is not a severity score or clinical recommendation. Verified contact and booking details will be added when available.' }
     ]
   },
   resources: {
@@ -170,19 +172,19 @@ const contentPages: Record<string, ContentPage> = {
   howItWorks: {
     eyebrow: 'A clear path to care',
     title: 'Clear information here. Secure care there.',
-    lead: 'MindCare helps you understand your options. HealthPlix handles patient and health information.',
+    lead: 'Antara helps you understand your options. HealthPlix handles patient and health information.',
     sections: [
       { kind: 'steps', heading: 'A simple journey from understanding to care', items: careSteps },
-      { kind: 'notice', heading: 'What never returns to MindCare', body: 'Assessment answers, scores, diagnoses, prescriptions, payment information, patient IDs, and health records are not sent back to this public website.' }
+      { kind: 'notice', heading: 'Keep formal care information secure', body: 'Reflection check-in answers are not saved or sent from this site. Formal assessment answers, diagnoses, prescriptions, payment information, patient IDs, and health records remain in HealthPlix.' }
     ]
   },
   about: {
-    eyebrow: 'About MindCare',
+    eyebrow: 'About Antara',
     title: 'Clinician-led information, connected care',
-    lead: 'MindCare helps people understand available support before continuing to the HealthPlix patient application.',
+    lead: 'Antara helps people understand available support before continuing to the HealthPlix patient application.',
     sections: [
       { kind: 'prose', heading: 'An approach built on listening', body: 'A first conversation is a chance to talk about what brought you here and consider a next step together. It is not an interrogation, and you do not need to arrive with a diagnosis.' },
-      { kind: 'notice', heading: 'Clinical information is being verified', body: 'Clinician biographies, qualifications, registrations, clinic details, and care availability will be published after verification by the clinic.' },
+      { kind: 'notice', heading: 'Doctor credentials and clinic details', body: 'Dr. Kartheek Kutnani is a Neuro Psychotherapist. Qualifications, registrations, clinic details, and care availability will be published after verification by the clinic.' },
       { kind: 'cards', heading: 'What a first session can include', items: [
         { title: 'A conversation', body: 'Share what feels important in your own words and at a pace that works for you.' },
         { title: 'Understanding your needs', body: 'The clinician may ask about your experience, history, safety, and goals.' },
@@ -192,30 +194,30 @@ const contentPages: Record<string, ContentPage> = {
   },
   contact: {
     eyebrow: 'Contact',
-    title: 'Talk to us, your way',
+    title: 'Contact Dr. Kartheek Kutnani',
     lead: 'Questions before booking? Contact details will be added once verified. Please do not share assessment answers or medical records through ordinary contact channels.',
     sections: [
-      { kind: 'notice', heading: 'Contact details are being confirmed', body: 'Verified phone, WhatsApp, clinic address, opening hours, and email will appear here before launch.' },
+      { kind: 'notice', heading: 'Contact details are being confirmed', body: 'Verified phone, WhatsApp, clinic address, opening hours, and booking link for Dr. Kartheek Kutnani will appear here before launch.' },
       { kind: 'prose', heading: 'Book securely', body: 'Appointments are managed in HealthPlix. The booking link will be connected once the clinic provides its approved destination.' }
     ]
   },
   faq: {
     eyebrow: 'Frequently asked questions',
-    title: 'What to expect from MindCare and HealthPlix',
+    title: 'What to expect from Antara and HealthPlix',
     lead: 'A few clear answers about privacy, care, and where to go next.',
     sections: [{ kind: 'faqs', heading: 'Common questions', items: [
       { title: 'What information can I read without logging in?', body: 'You can explore public service, therapy, and self-check information without creating an account.' },
-      { title: 'Where do assessments happen?', body: 'Any assessment questions, answers, scoring, and results are handled in HealthPlix, not on this public website.' },
+      { title: 'Where do assessments happen?', body: 'Optional reflection check-ins run in your current browser session and are not saved or sent. Formal clinical assessments, answers, and results are handled in HealthPlix.' },
       { title: 'Where do I book an appointment?', body: 'Appointments are managed securely through HealthPlix. The approved booking link will be added here.' },
-      { title: 'Does MindCare store medical records?', body: 'No. Login, appointments, payments, prescriptions, and health records remain in HealthPlix.' },
+      { title: 'Does Antara store medical records?', body: 'No. Login, appointments, payments, prescriptions, and health records remain in HealthPlix.' },
       { title: 'Is a self-check a diagnosis?', body: 'No. Self-checks are preliminary and do not replace an evaluation by a qualified clinician.' },
-      { title: 'What should I do in a crisis?', body: 'MindCare is not an emergency service. Call India emergency response at 112 or Tele-MANAS at 14416 for mental-health support.' }
+      { title: 'What should I do in a crisis?', body: 'Antara is not an emergency service. Call India emergency response at 112 or Tele-MANAS at 14416 for mental-health support.' }
     ] }]
   },
   crisis: {
     eyebrow: 'Immediate support',
     title: 'Use real-time help now',
-    lead: 'MindCare and routine HealthPlix booking are not emergency services. If you or someone else may be in immediate danger, do not wait for an online response.',
+    lead: 'Antara and routine HealthPlix booking are not emergency services. If you or someone else may be in immediate danger, do not wait for an online response.',
     sections: [
       { kind: 'cards', heading: 'Immediate help in India', items: [
         { title: 'Emergency response', body: 'Call India’s national emergency response number for immediate danger.', href: 'tel:112' },
@@ -227,41 +229,41 @@ const contentPages: Record<string, ContentPage> = {
   privacy: {
     eyebrow: 'Legal',
     title: 'Privacy policy',
-    lead: 'How the public MindCare website and HealthPlix remain separate. This draft requires legal review before publication.',
+    lead: 'How the public Antara website and HealthPlix remain separate. This draft requires legal review before publication.',
     sections: [
-      { kind: 'prose', heading: 'Public-site data boundary', body: 'MindCare does not provide patient registration, administer assessment questions, calculate scores, or store assessment results.' },
+      { kind: 'prose', heading: 'Public-site data boundary', body: 'Antara offers optional, non-validated reflection questions and a simple frequency total in the current page session. Answers are not saved or sent from this website. Antara does not provide patient registration or clinical assessment; formal clinical assessments are handled in HealthPlix.' },
       { kind: 'prose', heading: 'HealthPlix', body: 'When you choose patient login, an assessment, or appointment booking, you continue to HealthPlix. Information entered there is governed by the applicable HealthPlix and clinic privacy notices.' },
       { kind: 'prose', heading: 'Public website operations', body: 'The website may process basic technical information required to deliver pages and protect the service. Sensitive-health advertising audiences and assessment-response tracking are not part of this design.' },
-      { kind: 'prose', heading: 'Your choices', body: 'You may browse services and educational information without creating a MindCare account. Any analytics or cookies must follow an approved consent configuration.' },
+      { kind: 'prose', heading: 'Your choices', body: 'You may browse services and educational information without creating an Antara account. Any analytics or cookies must follow an approved consent configuration.' },
       { kind: 'notice', heading: 'Legal review required', body: 'Privacy contact, policy owner, retention details, jurisdictions, and review date must be supplied and approved before launch.' }
     ]
   },
   terms: {
     eyebrow: 'Legal',
     title: 'Terms of use',
-    lead: 'Terms for using MindCare as a public information website. This draft requires legal review before publication.',
+    lead: 'Terms for using Antara as a public information website. This draft requires legal review before publication.',
     sections: [
-      { kind: 'prose', heading: 'The service', body: 'MindCare provides general information about mental-wellbeing services, therapies, and preliminary self-check options. It does not provide treatment by itself.' },
-      { kind: 'prose', heading: 'HealthPlix services', body: 'Login, consent, assessments, appointments, payments, prescriptions, and health records are provided through HealthPlix and are subject to applicable terms.' },
-      { kind: 'prose', heading: 'No patient account', body: 'MindCare does not create or maintain public-site patient accounts or assessment histories.' },
+      { kind: 'prose', heading: 'The service', body: 'Antara provides general information about mental-wellbeing services and therapies, plus optional non-diagnostic reflection check-ins. It does not provide treatment by itself.' },
+      { kind: 'prose', heading: 'HealthPlix services', body: 'Patient login, consent, formal assessments, appointments, payments, prescriptions, and health records are provided through HealthPlix and are subject to applicable terms.' },
+      { kind: 'prose', heading: 'No patient account', body: 'Antara does not create public-site patient accounts or save reflection check-in answers or totals.' },
       { kind: 'prose', heading: 'Acceptable use and changes', body: 'Do not interfere with the website, attempt unauthorized access, or misuse its content or external links. The final terms and review date require legal approval.' }
     ]
   },
   disclaimer: {
     eyebrow: 'Clinical information',
     title: 'Medical disclaimer',
-    lead: 'Important limits of the information provided on MindCare. This copy requires clinical and legal approval before publication.',
+    lead: 'Important limits of the information provided on Antara. This copy requires clinical and legal approval before publication.',
     sections: [
       { kind: 'prose', heading: 'Information, not diagnosis', body: 'Service descriptions and self-check introductions are educational. They do not diagnose a condition or replace an evaluation by a qualified clinician.' },
-      { kind: 'prose', heading: 'Assessments', body: 'Any assessment available through HealthPlix must be clinically approved and appropriately licensed. Results should be interpreted through the HealthPlix care workflow.' },
+      { kind: 'prose', heading: 'Assessments', body: 'Antara reflection check-ins are not validated screening tools and their totals are not severity ratings. Formal assessments in HealthPlix should be clinically approved and interpreted through the HealthPlix care workflow.' },
       { kind: 'prose', heading: 'Treatment decisions', body: 'Medication, treatment, or crisis decisions should not be based solely on public website content. Consult an appropriately qualified professional.' },
-      { kind: 'notice', heading: 'Not for emergencies', body: 'MindCare is not monitored as an emergency service. If there is immediate danger, use emergency services now.' }
+      { kind: 'notice', heading: 'Not for emergencies', body: 'Antara is not monitored as an emergency service. If there is immediate danger, use emergency services now.' }
     ]
   },
   accessibility: {
     eyebrow: 'Accessibility',
     title: 'Access should not depend on how you browse',
-    lead: 'MindCare aims to make public information usable across devices, input methods, and assistive technologies.',
+    lead: 'Antara aims to make public information usable across devices, input methods, and assistive technologies.',
     sections: [
       { kind: 'list', heading: 'What we support', items: [
         { title: 'Keyboard navigation', body: 'Navigate interactive controls without a mouse.' },
@@ -275,9 +277,9 @@ const contentPages: Record<string, ContentPage> = {
   notFound: {
     eyebrow: '404',
     title: 'We could not find that page',
-    lead: 'The address may have changed. You can return to the MindCare homepage or browse services.',
+    lead: 'The address may have changed. You can return to the Antara homepage or browse services.',
     sections: [{ kind: 'cards', heading: 'Continue exploring', items: [
-      { title: 'MindCare home', body: 'Start again from the homepage.', href: '/' },
+      { title: 'Antara home', body: 'Start again from the homepage.', href: '/' },
       { title: 'Services', body: 'Explore support options.', href: '/services' }
     ] }]
   }

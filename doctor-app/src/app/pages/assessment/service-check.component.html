@@ -1,0 +1,39 @@
+@if (check(); as current) {
+  <section class="page-hero check-hero"><div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a routerLink="/">Home</a><span aria-hidden="true">/</span><a routerLink="/services">Services</a><span aria-hidden="true">/</span><span>{{ current.title }} check-in</span></nav>
+    <div class="page-hero__inner"><div><p class="eyebrow">Optional self-reflection</p><h1>{{ current.title }} check-in</h1><p class="page-hero__lead">Think about the past two weeks. Choose how often each experience has come up for you.</p></div><div class="hero-side-note"><span>10</span><p>Questions<br>About 2 minutes</p></div></div>
+  </div></section>
+  <main class="check-main container">
+    <aside class="check-notice" aria-label="Important information"><strong>This is not a diagnosis.</strong> This reflection is not a validated clinical assessment and does not replace a conversation with a qualified professional. Your answers are not stored or sent from this website.</aside>
+    <div class="check-safety"><strong>Need urgent help?</strong> If you or someone else is in immediate danger, call <a href="tel:112">112</a>. For mental-health support in India, call <a href="tel:14416">Tele-MANAS 14416</a>.</div>
+    @if (resultSubmitted) {
+      <section class="check-result" aria-live="polite" aria-labelledby="result-heading">
+        <p class="eyebrow">Your reflection</p>
+        <h2 id="result-heading">You completed the check-in.</h2>
+        <p class="check-result__score"><strong>{{ score }}</strong><span>/ 30</span></p>
+        <p>This is a simple total of the frequency choices you selected. It is not a diagnosis, severity rating, or clinical recommendation. You can use it as a starting point for a conversation with Dr. Kartheek.</p>
+        <div class="check-result__actions"><a class="button" routerLink="/contact">Contact Dr. Kartheek <span aria-hidden="true">→</span></a><button class="text-link" type="button" (click)="restartCheck()">Retake check-in</button></div>
+      </section>
+    } @else {
+      <div class="check-progress" role="progressbar" aria-label="Questions answered" aria-valuemin="0" aria-valuemax="10" [attr.aria-valuenow]="answeredCount">
+        <div><span>{{ answeredCount }} of 10 answered</span><span>Score: 0–30</span></div>
+        <span class="check-progress__track"><span [style.width.%]="answeredCount * 10"></span></span>
+      </div>
+      <div class="check-questions">
+        @for (question of current.questions; track $index; let questionIndex = $index) {
+          <fieldset class="check-question">
+            <legend><span>{{ (questionIndex + 1).toString().padStart(2, '0') }}</span>{{ question }}</legend>
+            <div class="check-options">
+              @for (option of options; track option.value) {
+                <label><input type="radio" [name]="'question-' + questionIndex" [value]="option.value" [checked]="answers[questionIndex] === option.value" (change)="setAnswer(questionIndex, option.value)"><span>{{ option.label }}</span></label>
+              }
+            </div>
+          </fieldset>
+        }
+      </div>
+      <div class="check-submit"><button class="button" type="button" [disabled]="score === null" (click)="submitCheck()">See my reflection <span aria-hidden="true">→</span></button>@if (score === null) {<span>Answer all 10 questions to continue.</span>}</div>
+    }
+  </main>
+} @else {
+  <section class="page-hero"><div class="container"><p class="eyebrow">Self-check not found</p><h1>Choose a support topic first.</h1><a class="button" routerLink="/services">Browse services <span aria-hidden="true">→</span></a></div></section>
+}

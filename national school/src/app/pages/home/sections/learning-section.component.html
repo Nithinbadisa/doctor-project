@@ -1,0 +1,8 @@
+<section class="learning-section section-space" id="learning" aria-labelledby="learning-title">
+  <div class="container">
+    <div class="section-heading"><p class="eyebrow"><span>02</span> Learning with purpose</p><h2 id="learning-title">Strong foundations.<br><em>Open horizons.</em></h2><p>Confidence comes from learning the basics well, making connections, and knowing it is always okay to ask why.</p></div>
+    <div class="learning-grid">@for (item of learningPrinciples; track item.title; let i = $index) {
+      <article class="learning-item"><div class="learning-item__image-wrap"><img [src]="item.image" [alt]="item.imageAlt" width="900" height="650" loading="lazy"><span>0{{ i + 1 }}</span></div><p class="eyebrow">{{ item.eyebrow }}</p><h3>{{ item.title }}</h3><p>{{ item.description }}</p></article>
+    }</div>
+  </div>
+</section>

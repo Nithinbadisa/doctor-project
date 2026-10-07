@@ -28,6 +28,51 @@
 			"isBackground": false,
 			"problemMatcher": [],
 			"group": "build"
+		},
+		{
+			"label": "Build National School website",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"national school",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Test National School website",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"national school",
+				"test",
+				"--",
+				"--watch=false",
+				"--browsers=ChromeHeadless"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Serve National School website",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"national school",
+				"start",
+				"--",
+				"--port",
+				"4201"
+			],
+			"isBackground": true,
+			"problemMatcher": []
 		}
 	]
 }

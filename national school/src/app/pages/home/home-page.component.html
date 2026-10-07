@@ -1,0 +1,25 @@
+<main id="main-content">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <img class="hero__image" src="/images/tree-planting.jpg" alt="National School students taking part in a tree-planting activity" width="686" height="784" fetchpriority="high">
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow"><span></span>{{ school.locality }} · {{ school.city }}</p>
+      <h1 id="hero-title">Welcome to<br><em>National School.</em></h1>
+      <p class="hero__lead">A learning community in Vidyadharpuram, Vijayawada. Explore school information, academics, student life, and admissions.</p>
+      <div class="hero__actions"><a class="button button--lime" routerLink="/about-us">About our school <span aria-hidden="true">→</span></a><a class="hero__text-link" routerLink="/admissions">Admissions information <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="hero__caption"><span>Student learning in action</span><span>Vidyadharpuram, Vijayawada</span></div>
+  </section>
+  <nav class="school-shortcuts" aria-label="Explore National School"><div class="container school-shortcuts__inner">
+    <a routerLink="/about-us"><span>01</span><strong>Our School</strong><small>Learn about National School</small><b aria-hidden="true">→</b></a>
+    <a routerLink="/academics"><span>02</span><strong>Academics</strong><small>Explore learning information</small><b aria-hidden="true">→</b></a>
+    <a routerLink="/student-life"><span>03</span><strong>Student Life</strong><small>Learning beyond lessons</small><b aria-hidden="true">→</b></a>
+    <a routerLink="/admissions"><span>04</span><strong>Admissions</strong><small>Plan your next steps</small><b aria-hidden="true">→</b></a>
+  </div></nav>
+  <app-school-intro-section />
+  <section class="belief-band" aria-label="Our school values"><div class="container belief-band__inner"><p>Learn with <strong>curiosity.</strong></p><span aria-hidden="true">✳</span><p>Grow with <strong>confidence.</strong></p><span aria-hidden="true">✳</span><p>Belong with <strong>kindness.</strong></p></div></section>
+  <app-learning-section />
+  <app-school-life-section />
+  <app-admissions-section />
+  <section class="visit-section" id="contact" aria-labelledby="visit-title"><div class="container visit-section__inner"><div><p class="eyebrow">Come say hello</p><h2 id="visit-title">Find National School.</h2><p>{{ school.locality }}, {{ school.city }}, {{ school.state }}</p></div><a class="button button--light" [href]="school.mapSearchUrl" target="_blank" rel="noopener noreferrer">Open map search <span aria-hidden="true">↗</span></a></div></section>
+</main>

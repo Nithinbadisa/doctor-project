@@ -1,0 +1,13 @@
+.intro-band { padding: 6rem 0; background: #f7f7ef; }
+.intro-band__inner { display: grid; grid-template-columns: 0.7fr 1.1fr 0.9fr; align-items: start; gap: 2.5rem; }
+.intro-band__inner > .eyebrow { display: flex; gap: 0.5rem; }
+.intro-band__inner > .eyebrow span { color: var(--forest); }
+.intro-band h2 { margin-bottom: 1rem; color: var(--forest); font: 3rem/1.08 'DM Serif Display', Georgia, serif; }
+.intro-band h2 em { color: var(--coral); }
+.intro-band__copy > p:not(.eyebrow) { max-width: 620px; margin-bottom: 1.3rem; color: #4e6055; font-size: 0.94rem; line-height: 1.8; }
+.text-link { color: var(--forest); font-size: 0.82rem; font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 0.22em; }
+.intro-band__image { margin: 0; }
+.intro-band__image img { width: 100%; aspect-ratio: 0.95; object-fit: cover; }
+.intro-band__image figcaption { margin-top: 0.6rem; color: #657268; font-size: 0.72rem; }
+@media (max-width: 900px) { .intro-band__inner { grid-template-columns: 1fr 1fr; } .intro-band__inner > .eyebrow { grid-column: 1 / -1; } .intro-band__image { max-width: 430px; } }
+@media (max-width: 650px) { .intro-band { padding: 3.5rem 0; } .intro-band__inner { grid-template-columns: 1fr; gap: 1.5rem; } .intro-band__inner > .eyebrow { grid-column: auto; } .intro-band h2 { font-size: 2.4rem; } .intro-band__image { max-width: none; } .intro-band__image img { aspect-ratio: 1.35; } }

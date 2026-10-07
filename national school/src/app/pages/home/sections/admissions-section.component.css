@@ -1,0 +1,21 @@
+.admissions-section { padding: 5.5rem 0; background: #e4ebdb; }
+.admissions-section__inner { display: grid; grid-template-columns: 1fr 0.9fr; gap: 4rem; align-items: center; }
+.admissions-section__intro { max-width: 600px; }
+.eyebrow { margin-bottom: 0.8rem; color: var(--coral); font-size: 0.69rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.eyebrow span { color: var(--forest); }
+.admissions-section h2 { max-width: 560px; margin-bottom: 1rem; color: var(--forest); font: 3rem/1.08 'DM Serif Display', Georgia, serif; }
+.admissions-section h2 em { color: var(--coral); }
+.admissions-section__intro > p:not(.eyebrow) { max-width: 540px; margin-bottom: 1.4rem; color: #4c5c52; font-size: 0.9rem; line-height: 1.75; }
+.admissions-list { margin: 0; padding: 0; list-style: none; }
+.admissions-list li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.9rem; padding: 1.15rem 0; border-top: 1px solid #cbd7c8; }
+.admissions-list li > span { color: var(--coral); font-size: 0.78rem; font-weight: 800; }
+.admissions-list h3 { margin-bottom: 0.35rem; color: var(--forest); font-size: 0.94rem; }
+.admissions-list p { max-width: 430px; margin: 0; color: #506257; font-size: 0.8rem; line-height: 1.6; }
+.admissions-gallery { display: grid; grid-template-columns: 1.05fr 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+.admissions-gallery figure { min-width: 0; margin: 0; }
+.admissions-gallery img { width: 100%; height: 100%; max-height: 350px; aspect-ratio: 1.15; object-fit: cover; }
+.admissions-gallery__poster img { aspect-ratio: 1; object-fit: contain; background: #f6d45c; }
+.admissions-gallery figcaption { margin-top: 0.55rem; color: #506257; font-size: 0.72rem; }
+@media (max-width: 650px) { .admissions-section { padding: 3.5rem 0; } .admissions-section__inner { grid-template-columns: 1fr; gap: 1rem; } .admissions-section h2 { font-size: 2.4rem; } .admissions-list { margin-top: 0.5rem; } }
+@media (max-width: 760px) { .admissions-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; margin-top: 2rem; } .admissions-gallery__poster { grid-column: 1 / -1; } .admissions-gallery__poster img { max-height: 420px; object-fit: contain; } .admissions-gallery img { max-height: 260px; } }
+@media (max-width: 420px) { .admissions-gallery { grid-template-columns: 1fr; } .admissions-gallery__poster { grid-column: auto; } }

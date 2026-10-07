@@ -1,0 +1,8 @@
+<section class="life-section section-space" id="school-life" aria-labelledby="life-title">
+  <div class="container">
+    <div class="section-heading section-heading--row"><div><p class="eyebrow"><span>03</span> More than a classroom</p><h2 id="life-title">Make space for <em>possibility.</em></h2></div><p>Learning continues when children create, move, collaborate, and find new ways to express themselves.</p></div>
+    <div class="life-grid">@for (item of schoolLife; track item.title; let i = $index) {
+      <article class="life-item" [class.life-item--wide]="i === 0"><img [src]="item.image" [alt]="item.imageAlt" width="1000" height="700" loading="lazy"><div class="life-item__caption"><span class="eyebrow">{{ item.eyebrow }}</span><h3>{{ item.title }}</h3><p>{{ item.description }}</p></div></article>
+    }</div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <div class="site-footer__main">
+    <div class="footer-brand"><a class="brand" routerLink="/"><span class="brand__name">National <strong>School</strong></span><span class="brand__place">Vidyadharpuram, Vijayawada</span></a><p>School information for families in Vidyadharpuram and Vijayawada.</p></div>
+    <nav class="footer-links" aria-label="Footer navigation"><a routerLink="/about-us">Our School</a><a routerLink="/academics">Academics</a><a routerLink="/student-life">Student Life</a><a routerLink="/admissions">Admissions</a><a routerLink="/contact-us">Contact</a></nav>
+    <div class="footer-location"><h2>Find us</h2><p>{{ school.locality }}<br>{{ school.city }}, {{ school.state }}</p><a [href]="school.mapSearchUrl" target="_blank" rel="noopener noreferrer">Open map search <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <div class="site-footer__bottom"><span>© {{ school.name }} {{ currentYear }}</span><a href="#top">Back to top ↑</a></div>
+</footer>

@@ -1,0 +1,27 @@
+:host { display: block; }
+.page-heading { padding: 2.8rem 0 3.5rem; background: #e9f0e6; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.8rem; color: #6e7d72; font-size: 0.74rem; }
+.breadcrumbs a { color: var(--forest); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.eyebrow { margin-bottom: 0.7rem; color: var(--coral); font-size: 0.71rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.page-heading h1 { max-width: 840px; margin-bottom: 1rem; color: var(--forest); font: 3.5rem/1.05 'DM Serif Display', Georgia, serif; }
+.page-heading__intro { max-width: 740px; margin: 0; color: #4e6055; font-size: 1rem; line-height: 1.75; }
+.information-content { padding: 1.5rem 0 4.5rem; background: var(--paper); }
+.information-row { display: grid; grid-template-columns: 3rem minmax(0, 760px); gap: 1rem; padding: 1.5rem 0; border-bottom: 1px solid #d8e0d5; }
+.information-row__number { padding-top: 0.35rem; color: var(--coral); font-size: 0.77rem; font-weight: 800; }
+.information-row h2 { margin-bottom: 0.55rem; color: var(--forest); font: 1.65rem/1.2 'DM Serif Display', Georgia, serif; }
+.information-row p, .information-row li { color: #506257; font-size: 0.9rem; line-height: 1.75; }
+.information-row p { margin-bottom: 0; }
+.information-row ul { display: grid; gap: 0.4rem; margin: 0.8rem 0 0; padding-left: 1.2rem; }
+.contact-panel, .location-panel { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 3rem; padding: 2rem; background: var(--forest); color: white; }
+.contact-panel h2, .location-panel h2 { margin-bottom: 0.5rem; color: white; font: 2rem/1.1 'DM Serif Display', Georgia, serif; }
+.contact-panel p:not(.eyebrow), .location-panel p:not(.eyebrow) { margin: 0; color: #d6e3d8; font-size: 0.88rem; line-height: 1.65; }
+.contact-panel .eyebrow, .location-panel .eyebrow { color: var(--lime); }
+.contact-panel .button, .location-panel .button { flex: 0 0 auto; }
+@media (max-width: 650px) {
+  .page-heading { padding: 2rem 0 2.5rem; }
+  .page-heading h1 { font-size: 2.6rem; }
+  .information-content { padding-top: 0.5rem; }
+  .information-row { grid-template-columns: 2rem minmax(0, 1fr); gap: 0.65rem; padding: 1.2rem 0; }
+  .contact-panel, .location-panel { align-items: flex-start; flex-direction: column; gap: 1.1rem; margin-top: 2rem; padding: 1.4rem; }
+  .contact-panel h2, .location-panel h2 { font-size: 1.75rem; }
+}

@@ -1,0 +1,21 @@
+<div class="location-bar">
+  <div class="location-bar__inner"><span>Vidyadharpuram · Vijayawada</span><span>Welcome to National School</span></div>
+</div>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" routerLink="/" aria-label="National School home" (click)="closeMenu()">
+      <span class="brand__name">National <strong>School</strong></span>
+      <span class="brand__place">Vidyadharpuram, Vijayawada</span>
+    </a>
+    <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen()" aria-controls="main-navigation" (click)="toggleMenu()">
+      <span>{{ menuOpen() ? 'Close' : 'Menu' }}</span><span aria-hidden="true">{{ menuOpen() ? '×' : '+' }}</span>
+    </button>
+    <nav id="main-navigation" class="main-nav" [class.main-nav--open]="menuOpen()" aria-label="Main navigation">
+      <a routerLink="/about-us" routerLinkActive="is-active" (click)="closeMenu()">Our School</a>
+      <a routerLink="/academics" routerLinkActive="is-active" (click)="closeMenu()">Academics</a>
+      <a routerLink="/student-life" routerLinkActive="is-active" (click)="closeMenu()">Student Life</a>
+      <a routerLink="/admissions" routerLinkActive="is-active" (click)="closeMenu()">Admissions</a>
+      <a class="main-nav__contact" routerLink="/contact-us" (click)="closeMenu()">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>

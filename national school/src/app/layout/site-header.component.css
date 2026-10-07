@@ -1,0 +1,26 @@
+:host { display: block; position: relative; z-index: 5; }
+.location-bar { background: var(--forest); color: #edf4df; font-size: 0.72rem; }
+.location-bar__inner { display: flex; width: min(1200px, calc(100% - 3rem)); min-height: 30px; align-items: center; justify-content: space-between; gap: 0.65rem; margin: auto; }
+.location-bar__inner span:first-child { font-weight: 700; }
+.site-header { background: var(--paper); border-bottom: 1px solid #dce4d9; }
+.site-header__inner { display: flex; width: min(1200px, calc(100% - 3rem)); min-height: 76px; align-items: center; justify-content: space-between; gap: 1.2rem; margin: auto; }
+.brand { display: grid; flex: 0 0 auto; gap: 0.2rem; color: var(--forest); text-decoration: none; }
+.brand__name { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.42rem; line-height: 1.05; }
+.brand__name strong { color: var(--coral); font-weight: 400; }
+.brand__place { color: #6b786e; font-size: 0.65rem; }
+.main-nav { display: flex; align-items: center; gap: clamp(1rem, 2.1vw, 1.8rem); }
+.main-nav a { color: #3e5348; font-size: 0.76rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.main-nav a:hover { color: var(--coral); }
+.main-nav a.is-active:not(.main-nav__contact) { color: var(--forest); text-decoration: underline; text-decoration-color: var(--coral); text-underline-offset: 0.35em; }
+.main-nav .main-nav__contact { display: inline-flex; min-height: 43px; align-items: center; gap: 0.7rem; padding: 0.65rem 0.9rem; background: var(--coral); color: white; }
+.main-nav .main-nav__contact:hover { background: #b74d36; color: white; }
+.menu-toggle { display: none; }
+@media (max-width: 740px) {
+  .location-bar__inner, .site-header__inner { width: min(1200px, calc(100% - 2rem)); }
+  .site-header__inner { min-height: 72px; }
+  .menu-toggle { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.65rem; border: 1px solid var(--forest); background: transparent; color: var(--forest); font: 700 0.78rem 'Manrope', sans-serif; cursor: pointer; }
+  .main-nav { position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 0.5rem 1rem 1rem; border-bottom: 1px solid #dce4d9; background: var(--paper); box-shadow: 0 12px 24px rgb(24 53 42 / 12%); }
+  .main-nav--open { display: flex; flex-direction: column; }
+  .main-nav a { padding: 0.9rem 0.5rem; border-bottom: 1px solid #e2e7df; font-size: 0.95rem; }
+  .main-nav .main-nav__contact { justify-content: center; margin-top: 0.8rem; }
+}
